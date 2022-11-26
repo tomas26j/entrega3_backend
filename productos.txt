@@ -1,0 +1,39 @@
+[
+ {
+   "title": "Escuadra",
+   "price": 123.45,
+   "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+   "id": 1
+ },
+ {
+   "title": "Calculadora",
+   "price": 234.56,
+   "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
+   "id": 2
+ },
+ {
+   "title": "Globo Terráqueo",
+   "price": 345.67,
+   "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
+   "id": 3
+ },
+ {
+   "title": "Microscopio",
+   "price": 456.78,
+   "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png",
+   "id": 4
+ },
+ {
+   "title": "Mochila Escolar",
+   "price": 200.00,
+   "thumbnail": "https://cdn4.iconfinder.com/data/icons/back-to-school-149/64/backpack-school-bag-school-education-512.png",
+   "id": 5
+ },
+ {
+   "title": "Cuaderno rallado",
+   "price": 20.15,
+   "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-528/64/education_educate_school_college_open_empty_book-512.png",
+   "id": 6
+ }
+]
+
