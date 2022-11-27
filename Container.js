@@ -19,56 +19,40 @@ class Container{
 
     readContainer = async () =>{ 
         try{
-            let obj = fs.readFile(this.filePath, 'utf8', function (err, data){    
-                if(err){
-                    throw err;
-                }
-                else{
-                    return obj;
-                }
+            let object = fs.readFile(this.filePath, 'utf8', function (err, data){    
+                if(err) throw err;
+                else return object;
             })
         }
         catch(err){ console.error(err); }
     }
     
-
     async save (object) {
-        if(object == undefined) {return console.error('Objeto indefinido');}
-        let fileDir = object;
+        if(object == undefined) { return console.error('Objeto indefinido');}
     
-        let obj = fs.readFileSync(fileDir, 'utf-8', (err, value) => {
-            if(err){
-                console.log(err);
-                console.error(`Failed to read the file ${objs}`);
-            }else{
-                let nuevoObjeto;
-                nuevoObjeto = JSON.parse(value);
-                return nuevoObjeto;
-            }
+        let externObject = fs.readFileSync(object, 'utf-8', (err, value) => {
+            if(err) console.log(err); 
+
+            else return JSON.parse(value);
         })
-        let objetoLocal = fs.readFileSync(this.filePath, 'utf-8', (err, value) => {
-            if(err){
-                console.log(err);
-                console.error(`Failed to read the file ${objs}`);
-            }else{
-                let nuevoObjeto;
-                nuevoObjeto = JSON.parse(value);
-                return nuevoObjeto;
-            }
+
+        let localObject = fs.readFileSync(this.filePath, 'utf-8', (err, value) => {
+            if(err) console.log(err);
+            
+            else return JSON.parse(value);
         })
         
         //Transformamos los strings en objetos
-        let externParsed = JSON.parse(obj);
-        let localParsed = JSON.parse(objetoLocal);
+        let externParsed = JSON.parse(externObject);
+        let localParsed = JSON.parse(localObject);
 
         // Mapeamos los ID del objeto local
         let result = localParsed.map(a => a.id);
-        console.log(result);
         
         //Obtenemos el ID mas alto
         let maxId;
         if(result.length > 0){
-            maxId = result.reduce((a, b) => Math.max(a, b), -Infinity); //console.log({maxId});// --Debug
+            maxId = result.reduce((a, b) => Math.max(a, b), -Infinity);
         }
         else{ maxId = 0; }
 
@@ -95,7 +79,6 @@ class Container{
 
     }
 
-
     async getById (number) {
         let fileData, parsedData, filtered;
         console.log({number});
@@ -116,8 +99,7 @@ class Container{
     async getAll(){
         let fileData;
         try {
-            fileData = await fs.promises.readFile(this.filePath, 'utf-8')
-            //console.log(`FILE DATA: \n${fileData}`); --DEBUG
+            fileData = await fs.promises.readFile(this.filePath, 'utf-8');
             return fileData;
         }catch (err){throw (err);}
     }
