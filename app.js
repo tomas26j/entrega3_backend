@@ -10,7 +10,7 @@ const container = new Container(PATH);
 
 
 app.get("/", function (req, res) {
-  res.send('<h1 style="color:red;"> Hello Fucking World </h1>');
+  res.send('<h1 style="color:red;"> Home page </h1>');
 });
 
 app.get("/productoRandom", function (req, res) {
