@@ -32,7 +32,7 @@ class Container{
     }
     
 
-    save = async (object) => {
+    async save (object) {
         if(object == undefined) {return console.error('Objeto indefinido');}
         let fileDir = object;
     
@@ -96,7 +96,7 @@ class Container{
     }
 
 
-    getById = async (number) =>{
+    async getById (number) {
         let fileData, parsedData, filtered;
         console.log({number});
         try {
@@ -113,7 +113,7 @@ class Container{
         
     }
 
-    getAll = async () =>{
+    async getAll(){
         let fileData;
         try {
             fileData = await fs.promises.readFile(this.filePath, 'utf-8')
@@ -122,7 +122,7 @@ class Container{
         }catch (err){throw (err);}
     }
     
-    deleteById = async (number) =>{
+    async deleteById (number) {
         let fileData, parsedData, smallerId, biggerId;
         
         try {
@@ -165,7 +165,7 @@ class Container{
         }catch (err){console.error('No se pudo filtrar un objeto, ERROR: ' + err); throw (err);}
     }
 
-    deleteAll = async (path) => {
+    async deleteAll (path) {
         let fileData;
         try { // Chequeo de que existencia del archivo
             fileData = await fs.promises.readFile(path, 'utf-8');
@@ -180,3 +180,4 @@ class Container{
 
 
 module.exports = Container;
+
