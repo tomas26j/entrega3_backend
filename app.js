@@ -24,6 +24,15 @@ app.get("/productoRandom", function (req, res) {
   getRandom();
 });
 
+app.get('/productos',(request,response) =>{
+  async function getProducts(){
+    let products = await productos.getAll(); 
+    response.send(products);
+  }
+  
+  getProducts();
+});
+
 app.get("/productos", function (req, res) {
   async function getProducts() {
     let products = await container.getAll();
